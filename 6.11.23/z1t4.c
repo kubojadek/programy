@@ -30,7 +30,6 @@ main() {
         } else if(max<x) {
             max=x;
         }     
-        x=0;
     }
     srednia=sumasr/liczniksr;
 

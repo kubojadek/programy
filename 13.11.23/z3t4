@@ -20,7 +20,7 @@ main() {
             }
             suma2+=mnoz;
         }
-        sumaall= suma1+suma2;
+        sumaall=suma1+suma2;
     }
     printf("y= %f",sumaall);
 }

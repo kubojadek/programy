@@ -5,7 +5,7 @@ main() {
     printf("podaj wielkosc tablicy (N,M =<20): ");
     scanf("%d%d",&N,&M);
     float x[N][M],suma=0.0;
-
+    //wypełnianie tablicy
     for(int i=0;i<N;i++) {
         for(int j=0;j<M;j++) {
             printf("podaj liczbę: ");

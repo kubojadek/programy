@@ -5,13 +5,14 @@ main() {
     printf("podaj wielkosc tablicy (N,M =<20): ");
     scanf("%d%d",&N,&M);
     float x[N][M],max;
-
+    //wypełnianie tablicy
     for(int i=0;i<N;i++) {
         for(int j=0;j<M;j++) {
             printf("podaj liczbę: ");
             scanf("%f",&x[i][j]);
         }
     }
+    //liczenie maksa w tablicy
     for(int i=0;i<N;i++) {
         for(int j=0;j<M;j++) {
             if(i==0 && j==0) {
@@ -25,6 +26,7 @@ main() {
             }    
         }
     }
+    //wyswietlanie tablicy
     for(int k=0;k<N;k++) {
         for(int l=0;l<M;l++) printf(" %f ",x[k][l]);
         printf("\n");

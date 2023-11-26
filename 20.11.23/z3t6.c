@@ -1,25 +1,17 @@
 #include <stdio.h>
 
 main() {
-    int x[19],min;
-    int m;
-    //wypełnianie tablicy
+    float tab[19],min;
+    int minindex;
     for(int i=0;i<20;i++) {
         printf("podaj liczbę: ");
-        scanf("%d",&x[i]);
+        scanf("%f",&tab[i]);
     }
-    //liczenie minimum w tablicy
-    min=x[0];
-    for(int i=0;i<20;i++) {
-        if (min>x[i]) {
-                min=x[i];
-                m=i;
-            }
+    min=tab[0];
+    for(int i=1;i<20;i++) {
+        if(min>tab[i]) {
+            min=tab[i];
+            minindex=i;
+        }
     }
-    //wyswietlanie tablicy
-    for(int i=0;i<20;i++) {
-        printf("%d ",x[i]);
-    }
-    printf("\n");
-    printf("minimalna liczba w tablicy to %d w miejscu x[%d]",min);
 }

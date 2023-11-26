@@ -1,11 +1,10 @@
 #include <stdio.h>
 
 main() {
-    float tab[19],min;
-    int minindex;
+    int minindex,tab[20],min;
     for(int i=0;i<20;i++) {
         printf("podaj liczbę: ");
-        scanf("%f",&tab[i]);
+        scanf("%d",&tab[i]);
     }
     min=tab[0];
     for(int i=1;i<20;i++) {
@@ -14,4 +13,6 @@ main() {
             minindex=i;
         }
     }
+    printf("\n");
+    printf("najmniejsza liczba to: %d i tej miejsce w tablicy to i[%d]",min,minindex);
 }

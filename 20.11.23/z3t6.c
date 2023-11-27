@@ -5,10 +5,9 @@ main() {
     for(int i=0;i<20;i++) {
         printf("podaj liczbę: ");
         scanf("%d",&tab[i]);
-    }
-    min=tab[0];
-    for(int i=1;i<20;i++) {
-        if(min>tab[i]) {
+        if (i==0) {
+            min=tab[0];
+        } else if(min>tab[i]) {
             min=tab[i];
             minindex=i;
         }

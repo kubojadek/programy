@@ -6,6 +6,9 @@ main() {
     if(plik==NULL) {
         printf("nie znaleziono pliku");
     } else {
-        
+        while(feof(plik)==0){
+            
+        }
     }
+    fclose(plik);
 }

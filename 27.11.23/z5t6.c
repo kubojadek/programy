@@ -14,7 +14,7 @@ main() {
             lenght=strlen(binary);
             if(binary[lenght-1]==10) lenght--;
             for(int i=0;i<lenght;i++) {
-                if(binary[i]-48==1) {
+                if(binary[i]=='1') {
                     decimal+=pow(2,lenght-1-i);
                 }
             }

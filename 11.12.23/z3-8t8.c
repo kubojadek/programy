@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
-#include <unistd.h>
 #include <math.h>
 
 void xpxk(float xp,float xk,float dx) {
@@ -14,14 +13,13 @@ float maxtab(float tab[],int N){
     srand(time(NULL));
     float max;
     for(int i=0;i<N;i++) {
-        tab[i]=rand();
         if(i==0) max=tab[i];
         else if(max<tab[i]) max=tab[i];
     }
     return max;
 }
 
-void stringtransform(char s[255]){
+void stringtransform(char s[]){
     int lenght=strlen(s);
     char pom;
     for(int i=0;i<lenght-1;i++) {

@@ -23,7 +23,6 @@ float maxtab(float tab[],int N){
 
 void stringtransform(char s[255]){
     int lenght=strlen(s);
-    printf("%d",lenght);
     char pom;
     for(int i=0;i<lenght-1;i++) {
         if(s[i]>=65&&s[i]<=90) s[i]+=32;

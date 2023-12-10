@@ -130,7 +130,8 @@ main() {
             break; 
      
         }
-        sleep(5);
+        getchar();
+        getchar();
     } while(a!=7);
 
 } 

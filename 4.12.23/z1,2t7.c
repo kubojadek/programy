@@ -15,26 +15,17 @@ main() {
             liczniksr++;
         }
         srednia=sumasr/liczniksr;
-        fclose(dane);
-    }
 
-    dane=fopen("dane.txt","r");
-    if (dane==NULL) {
-        printf("nie otwarto pliku dane\n.");
-    } else {
+        rewind(dane);
         while (feof(dane)==0) {
             fscanf(dane,"%f",&x);
             suma1+=pow(srednia-x,2);
         }
         sigma=sqrt((1.0/(liczniksr-1)*suma1));
-        fclose(dane);
-    }
-    raport=fopen("raport.txt","w");
-    ndane=fopen("ndane.txt","w");
-    dane=fopen("dane.txt","r");
-    if (dane==NULL) {
-        printf("nie otwarto pliku dane\n.");
-    } else {
+
+        raport=fopen("raport.txt","w");
+        ndane=fopen("ndane.txt","w");
+        rewind(dane);
         while (feof(dane)==0) {
             fscanf(dane,"%f",&x);
             if(x>srednia-(3*sigma)&&x<srednia+(3*sigma)) {
@@ -55,5 +46,4 @@ main() {
         fclose(dane);
         fclose(ndane);
     }
-    
 }

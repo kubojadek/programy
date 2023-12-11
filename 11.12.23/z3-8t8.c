@@ -62,7 +62,7 @@ main() {
     FILE *plik;
     do {
         system("clear");
-        printf("/----------------------------------------------/\n");
+        printf("/----------------------------------------------\\\n");
         printf("| 1. <xp,xk> z krokiem dx                      |\n");
         printf("| 2. max z losowanej tablicy                   |\n");
         printf("| 3. pobieranie ciągow z pliku i modyfikowanie |\n");
@@ -70,7 +70,7 @@ main() {
         printf("| 5. n silnia                                  |\n");
         printf("| 6. liczba eulera do potegi x                 |\n");          
         printf("| 7. koniec                                    |\n");
-        printf("/----------------------------------------------/\n");
+        printf("\\----------------------------------------------/\n");
         scanf("%d",&a);
 
         switch (a) {

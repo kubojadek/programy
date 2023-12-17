@@ -52,9 +52,9 @@ main() {
             for(int j=0;j<P;j++) printf("%d ",B[i][j]);
             printf("|\n");
         }
-        //liczenie AB i wyswietlanie 
+        //liczenie AB 
         mnozeniemacierzy(M,N,O,P,A,B,AB);
-
+        // wyswietlanie AB
         printf("twoja macierz AB:\n");
         for(int i=0;i<M;i++) {
             printf("| ");

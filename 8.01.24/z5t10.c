@@ -36,7 +36,7 @@ main() {
     scanf("%d%d",&N,&p);
     float tab[N];
     int histogram[p];
-    // zerowanie histogramu i losowanie tablicy (po co wpisywac skoro mozna losowac)
+    // zerowanie histogramu i losowanie tablicy (po co wpisywac skoro mozna losowac, losuje  < -RAND_MAX , RAND_MAX > )
     for(int i=0;i<N;i++) tab[i]=2*rand()-RAND_MAX;
     for(int i=0;i<p;i++) histogram[i]=0;
     

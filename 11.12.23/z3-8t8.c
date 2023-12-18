@@ -23,7 +23,7 @@ void stringtransform(char s[]){
     int lenght=strlen(s);
     char pom;
     for(int i=0;i<lenght-1;i++) {
-        if(s[i]>=65&&s[i]<=90) s[i]+=32;
+        if(s[i]>=97&&s[i]<=122) s[i]-=32;
     }
     for(int i=0;i<lenght/2;i++) {
         pom=s[i];
@@ -41,24 +41,25 @@ float PdoX(float x,int p) {
     return pow;
 }
 
-int silnia(int N) {
-    int silnia=1;
+unsigned long long int silnia(int N) {
+    unsigned long long int silnia=1;
+    if(N<0) return 0;
     for(int i=1;i<=N;i++) {
         silnia*=i;
     }
     return silnia;
 }
 
-void eX(float *eXNmax,float *eXN1, float x,int Nmax) {
-    for(int i=0;i<=Nmax;i++) {
-        *eXNmax+=PdoX(x,i)/silnia(i);
-        if(i<=1) *eXN1+=PdoX(x,i)/silnia(i);
-    }
+float eX(float x,int Nmax) {
+    float EdoX=0;
+    for(int i=0;i<=Nmax;i++) EdoX+=PdoX(x,i)/silnia(i);
+    return EdoX;
 }
 
 main() {
-    int a,N,p,Nmax;
-    float xp,xk,dx,max,x,eXNmax,eXN1;
+    int a,p,Nmax;
+    unsigned long long int N;
+    float xp,xk,dx,max,x,EdoX;
     FILE *plik;
     do {
         system("clear");
@@ -107,11 +108,8 @@ main() {
             case 6:
                 printf("podaj x i Nmax: ");
                 scanf("%f%d",&x,&Nmax);
-                eXNmax=0;
-                eXN1=0;
-                eX(&eXNmax,&eXN1,x,Nmax);
-                printf("e do x dla Nmax: %f\n",eXNmax);
-                printf("e do x dla N=1: %f\n",eXN1);
+                EdoX=eX(x,Nmax);
+                printf("e do x dla Nmax: %f\n",EdoX);
                 printf("wartosc funkcji exp(x): %f\n",exp(x));
             break;
 

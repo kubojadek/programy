@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int liczenie(char *lancuch, char *lancuchSzukany) {
+int szukaj(char lancuch[], char lancuchSzukany[]) {
     int dlugoscSzukanego = strlen(lancuchSzukany);
     int dlugosclancucha = strlen(lancuch);
 
@@ -12,21 +12,21 @@ int liczenie(char *lancuch, char *lancuchSzukany) {
         }
     }
     return liczba;
-}
+}    
 
 int main() {
     char lancuch[256];
     char lancuchSzukany[256];
 
     printf("Podaj lancuch: ");
-    fgets(lancuch, 256, stdin);
+    gets(lancuch);
     lancuch[strcspn(lancuch, "\n")] = 0;
 
     printf("Podaj lancuch szukany: ");
-    fgets(lancuchSzukany, 256, stdin);
+    gets(lancuchSzukany);
     lancuchSzukany[strcspn(lancuchSzukany, "\n")] = 0;
 
-    printf("Liczba wystapien '%s' w '%s' to: %d\n", lancuchSzukany, lancuch, liczenie(lancuch, lancuchSzukany));
+    printf("Liczba wystapien '%s' w '%s' to: %d\n", lancuchSzukany, lancuch, szukaj(lancuch, lancuchSzukany));
 
     return 0;
 }

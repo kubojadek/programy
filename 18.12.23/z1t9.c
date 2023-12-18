@@ -8,7 +8,7 @@ void wieszcholek(float a,float b,float c,float *p,float *q) {
 
 main() {
     float a,b,c,p,q;
-    printf("podaj wspolczynniki funkcji ax^2 + bx + c: ");
+    printf("podaj wspolczynniki funkcji ax^2 + bx + c:\n");
     scanf("%f%f%f",&a,&b,&c);
     wieszcholek(a,b,c,&p,&q);
     printf("wspolrzedne wieszcholka to : <%f,%f>",p,q);

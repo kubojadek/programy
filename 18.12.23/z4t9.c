@@ -1,7 +1,54 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int minmax(int N,float macierz[N][N],float *min, float *max,int *pwysX,int *pwysY,int *owysX,int *owysY) {
+int minmax(int a,int N,float macierz[N][N],float *maxmin,int *wysX,int *wysY) {
+    for(int i=0;i<N;i++) {
+        for(int j=0;j<N;j++) {
+            if(i==0&&j==0) {
+                *maxmin=macierz[i][j];
+                *wysX=i; *wysY=j;
+            }
+
+            if(a==1) {
+                if(*maxmin<macierz[i][j]) {
+                    *maxmin=macierz[i][j];
+                    *wysX=i; *wysY=j;
+                }
+            }
+            if(a==2) {
+                if(*maxmin<=macierz[i][j]) {
+                    *maxmin=macierz[i][j];
+                    *wysX=i; *wysY=j;
+                }
+            }
+            if(a==3) {
+                if(*maxmin>macierz[i][j]) {
+                    *maxmin=macierz[i][j];
+                    *wysX=i; *wysY=j;
+                }
+            }
+            if(a==4) {
+                if(*maxmin>=macierz[i][j]) {
+                    *maxmin=macierz[i][j];
+                    *wysX=i; *wysY=j;
+                }
+            }
+        }
+    }
+}
+
+main() {
+    system("clear");
+    int N,wysX,wysY,a;
+    printf("podaj wielkosc macierzy kwadratowej NxN: ");
+    scanf("%d",&N);
+    float macierz[N][N],maxmin;
+    for(int i=0;i<N;i++) {
+        for(int j=0;j<N;j++) {
+            printf("podaj element [%d][%d] macierzy: ",i+1,j+1);
+            scanf("%f",&macierz[i][j]);
+        }
+    }
     system("clear");
     printf("twoja macierz:\n\n");
     for(int i=0;i<N;i++) {
@@ -16,107 +63,16 @@ int minmax(int N,float macierz[N][N],float *min, float *max,int *pwysX,int *pwys
     printf("| 4. min ostatnie wystąpienie |\n");
     printf("| 5. koniec                   |\n");
     printf("\\-----------------------------/\n");
-    int a;
     scanf("%d",&a);
 
-    switch (a){
-        case 1:
-            for(int i=0;i<N;i++) {
-                for(int j=0;j<N;j++) {
-                    if(i==0&&j==0) {
-                        *max=macierz[i][j];
-                        *pwysX=i; *pwysY=j;
-                    }
-                    if(*max<macierz[i][j]) {
-                        *max=macierz[i][j];
-                        *pwysX=i; *pwysY=j;
-                    }
-                }
-            }
-        break;
-    
-        case 2:
-            for(int i=0;i<N;i++) {
-                for(int j=0;j<N;j++) {
-                    if(i==0&&j==0) {
-                        *max=macierz[i][j];
-                        *owysX=i; *owysY=j;
-                    }
-                    if(*max<=macierz[i][j]) {
-                        *max=macierz[i][j];
-                        *owysX=i; *owysY=j;
-                    }
-                }
-            }
-        break;
+    minmax(a,N,macierz,&maxmin,&wysX,&wysY);
 
-        case 3:
-            for(int i=0;i<N;i++) {
-                for(int j=0;j<N;j++) {
-                    if(i==0&&j==0) {
-                        *min=macierz[i][j];
-                        *pwysX=i; *pwysY=j;
-                    }
-                    if(*min>macierz[i][j]) {
-                        *min=macierz[i][j];
-                        *pwysX=i; *pwysY=j;
-                    }
-                }
-            }
-        break;
+    if(a==1) printf("max: %f, pierwsze wystąpienie w macierzy: [%d][%d]",maxmin,wysX+1,wysY+1);  
+    if(a==2) printf("max: %f, ostatnie wystąpienie w macierzy: [%d][%d]",maxmin,wysX+1,wysY+1);  
+    if(a==3) printf("min: %f, pierwsze wystąpienie w macierzy: [%d][%d]",maxmin,wysX+1,wysY+1);
+    if(a==4) printf("min: %f, ostatnie wystąpienie w macierzy: [%d][%d]",maxmin,wysX+1,wysY+1);
 
-        case 4:
-            for(int i=0;i<N;i++) {
-                for(int j=0;j<N;j++) {
-                    if(i==0&&j==0) {
-                        *min=macierz[i][j];
-                        *owysX=i; *owysY=j;
-                    }
-                    if(*min>=macierz[i][j]) {
-                        *min=macierz[i][j];
-                        *owysX=i; *owysY=j;
-                    }
-                }
-            }
-        break;
-    }
-    return a;
-}
-
-main() {
-    system("clear");
-    int N,pwysX,pwysY,owysX,owysY,a;
-    printf("podaj wielkosc macierzy kwadratowej NxN: ");
-    scanf("%d",&N);
-    float macierz[N][N],min,max;
-    for(int i=0;i<N;i++) {
-        for(int j=0;j<N;j++) {
-            printf("podaj element [%d][%d] macierzy: ",i+1,j+1);
-            scanf("%f",&macierz[i][j]);
-        }
-    }
-    do {
-        system("clear");
-        a=minmax(N,macierz,&min,&max,&pwysX,&pwysY,&owysX,&owysY);
-        switch (a) {
-            case 1:
-                printf("max: %f, pierwsze wystąpienie w macierzy: [%d][%d]",max,pwysX+1,pwysY+1);
-            break;
-                
-            case 2:
-                printf("max: %f, ostatnie wystąpienie w macierzy: [%d][%d]",max,owysX+1,owysY+1);
-            break;
-
-            case 3:
-                printf("min: %f, pierwsze wystąpienie w macierzy: [%d][%d]",min,pwysX+1,pwysY+1);
-            break;
-
-            case 4:
-                printf("min: %f, ostatnie wystąpienie w macierzy: [%d][%d]",min,owysX+1,owysY+1);
-            break;
-        }
-        getchar();
-        getchar();
-    } while(a!=5);
+    getchar();
+    getchar();
 
 }

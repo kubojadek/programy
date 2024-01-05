@@ -36,10 +36,3 @@ int main() {
     return 0;
 }
 
-/*
-for(int i = 0; i <= dlugosclancucha - dlugoscSzukanego; i++) {
-        if (strncmp(&lancuch[i], lancuchSzukany, dlugoscSzukanego) == 0) { 
-            liczba++;
-        }
-    }
-*/

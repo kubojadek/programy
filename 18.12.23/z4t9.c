@@ -72,7 +72,4 @@ main() {
     if(a==3) printf("min: %f, pierwsze wystąpienie w macierzy: [%d][%d]",maxmin,wysX+1,wysY+1);
     if(a==4) printf("min: %f, ostatnie wystąpienie w macierzy: [%d][%d]",maxmin,wysX+1,wysY+1);
 
-    getchar();
-    getchar();
-
 }

@@ -49,6 +49,7 @@ main() {
             scanf("%f",&macierz[i][j]);
         }
     }
+
     system("clear");
     printf("twoja macierz:\n\n");
     for(int i=0;i<N;i++) {
@@ -61,7 +62,6 @@ main() {
     printf("| 2. max ostatnie wystąpienie |\n");
     printf("| 3. min pierwsze wystąpienie |\n");
     printf("| 4. min ostatnie wystąpienie |\n");
-    printf("| 5. koniec                   |\n");
     printf("\\-----------------------------/\n");
     scanf("%d",&a);
 

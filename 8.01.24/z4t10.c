@@ -24,6 +24,7 @@ main() {
                 AB[i][j]=0;
             }
         }
+
         //wypełnianie macierzy A i B
         for(int i=0;i<M;i++) {
             for(int j=0;j<N;j++) {
@@ -38,6 +39,7 @@ main() {
                 scanf("%d",&B[i][j]);
             }
         }
+
         //wyswietlanie macierzy A i B
         system("clear");
         printf("twoja macierz A:\n");
@@ -52,8 +54,10 @@ main() {
             for(int j=0;j<P;j++) printf("%d ",B[i][j]);
             printf("|\n");
         }
+
         //liczenie AB 
         mnozeniemacierzy(M,N,O,P,A,B,AB);
+        
         // wyswietlanie AB
         printf("twoja macierz AB:\n");
         for(int i=0;i<M;i++) {
